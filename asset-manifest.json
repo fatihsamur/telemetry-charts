@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/telemetry-charts/static/css/main.aee5f1eb.css",
+    "main.js": "/telemetry-charts/static/js/main.07a5af88.js",
+    "static/js/787.9721d5a2.chunk.js": "/telemetry-charts/static/js/787.9721d5a2.chunk.js",
+    "index.html": "/telemetry-charts/index.html",
+    "main.aee5f1eb.css.map": "/telemetry-charts/static/css/main.aee5f1eb.css.map",
+    "main.07a5af88.js.map": "/telemetry-charts/static/js/main.07a5af88.js.map",
+    "787.9721d5a2.chunk.js.map": "/telemetry-charts/static/js/787.9721d5a2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aee5f1eb.css",
+    "static/js/main.07a5af88.js"
+  ]
+}
