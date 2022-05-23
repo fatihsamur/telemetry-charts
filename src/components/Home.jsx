@@ -1,7 +1,9 @@
 import React from 'react';
 import Box from './Box';
+import Bytes from './Bytes';
 import Clients from './Clients';
 import DoughnutChart from './DoughnutChart';
+import Messages from './Messages';
 
 const Home = (props) => {
   const { data } = props;
@@ -21,6 +23,15 @@ const Home = (props) => {
           <div id="clients" className="basis-full sm:basis-1/3">
             <Clients data={data} />
           </div>
+        </div>
+        <div className="flex flex-row">
+          <div id="clients" className="basis-full sm:basis-1/3">
+            <Messages data={data} />
+          </div>
+          <div id="clients" className=" basis-full sm:basis-1/3">
+            <Bytes data={data} />
+          </div>
+          <div id="clients" className="basis-full sm:basis-1/3"></div>
         </div>
       </div>
     </div>

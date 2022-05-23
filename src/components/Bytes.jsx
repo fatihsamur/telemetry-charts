@@ -27,29 +27,22 @@ ChartJS.register(
   ChartStreaming
 );
 
-const Clients = (props) => {
+const Bytes = (props) => {
   const brokerData = props.data;
   const data = {
     datasets: [
       {
-        label: 'Maximum Connected Clients',
+        label: 'Sent',
         data: [],
         borderDash: [8, 4],
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
       {
-        label: 'Current Connected Clients',
+        label: 'Received',
         data: [],
         borderDash: [8, 4],
         borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-      {
-        label: 'Rejected',
-        data: [],
-        borderDash: [8, 4],
-        borderColor: 'rgb(255, 99, 32)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
     ],
@@ -63,7 +56,7 @@ const Clients = (props) => {
       },
       title: {
         display: true,
-        text: 'Clients',
+        text: 'Bytes',
       },
     },
     scales: {
@@ -71,23 +64,20 @@ const Clients = (props) => {
         type: 'realtime',
         distribution: 'linear',
         realtime: {
-          duration: '5000',
+          duration: '4000',
           unit: 'seconds',
           displayFormat: 'h:mm',
           refresh: 100,
+          ttl: 5000,
           delay: 1000,
           onRefresh: function (chart) {
             chart.data.datasets[0].data.push({
               x: moment(),
-              y: brokerData[brokerData.length - 1].maxConnected,
+              y: brokerData[brokerData.length - 1].messageBytesSent,
             });
             chart.data.datasets[1].data.push({
               x: moment(),
-              y: brokerData[brokerData.length - 1].connected,
-            });
-            chart.data.datasets[2].data.push({
-              x: moment(),
-              y: brokerData[brokerData.length - 1].rejected,
+              y: brokerData[brokerData.length - 1].messageBytesReceived,
             });
           },
         },
@@ -116,4 +106,4 @@ const Clients = (props) => {
   return <Line options={options} data={data} />;
 };
 
-export default Clients;
+export default Bytes;
