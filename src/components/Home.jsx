@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from './Box';
+import Clients from './Clients';
 import DoughnutChart from './DoughnutChart';
-import LineChart from './LineChart';
 
 const Home = (props) => {
   const { data } = props;
@@ -18,22 +18,8 @@ const Home = (props) => {
               <Box message="pending" data={data} />
             </div>
           </div>
-          <div className="basis-full sm:basis-1/3">
-            <LineChart />
-          </div>
-          <div className="basis-full sm:basis-1/3">
-            <LineChart />
-          </div>
-        </div>
-        <div className="flex flex-row">
-          <div className="basis-full sm:basis-1/3">
-            <LineChart />
-          </div>
-          <div className="basis-full sm:basis-1/3">
-            <LineChart />
-          </div>
-          <div className="basis-full sm:basis-1/3">
-            <LineChart />
+          <div id="clients" className="basis-full sm:basis-1/3">
+            <Clients data={data} />
           </div>
         </div>
       </div>

@@ -3,10 +3,8 @@ import React from 'react';
 const Box = (props) => {
   const { message } = props;
   const { data } = props;
-  console.log(data);
   const retained = data.length > 0 ? data[data.length - 1].retainedMessages : 0;
   const pending = data.length > 0 ? data[data.length - 1].pendingMessages : 0;
-  console.log(retained, pending);
 
   return (
     <>
